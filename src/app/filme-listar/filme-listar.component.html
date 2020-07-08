@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h2>Lista de Filmes</h2>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Titulo</th>
+                  <th>Sinopse</th>
+                  <th>Data de Lançamento</th>
+                  <th>Genero</th>
+                  <th>Nacionalidade</th>
+                  <th>Estoque</th>
+                  <th>Criado em</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let filme of filmes | async">
+                  <td>{{filme.idFilme}}</td>
+                  <td>{{filme.titulo}}</td>
+                  <td>{{filme.sinopse}}</td>
+                  <td>{{filme.dataLancamento}}</td>
+                  <td>{{filme.genero}}</td>
+                  <td>{{filme.nacionalidade}}</td>
+                  <td>{{filme.estoque}}</td>
+                  <td>{{filme.criadoEm}}</td>
+                  <td><button type="button" (click)="deleteFilme(filme.idFilme)" class="btn btn-danger btn-xs btn-block" >Deletar</button>
+                      <button type="button" (click)="detalhesFilme(filme.idFilme)" class="btn btn-info btn-xs btn-block" >Detalhes</button>
+                      <button type="button" (click)="atualizarFilme(filme.idFilme)" class="btn btn-warning btn-xs btn-block">Atualizar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+</div>
+</div>
+</div>

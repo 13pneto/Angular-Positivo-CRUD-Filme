@@ -1,0 +1,37 @@
+<h2>Cadastrar Filme</h2>
+
+<form [formGroup]="formulario" (submit)="salvar()">
+
+    <div class="form-group">
+      <label>Titulo</label>
+      <input type="text" class="form-control" formControlName="titulo">
+    </div>
+
+
+  <div class="form-group">
+    <label for="name">Sinopse</label>
+    <input type="text" class="form-control" formControlName="sinopse">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Data de Lançamento</label>
+    <input type="date" class="form-control" formControlName="dataLancamento">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Genero</label>
+    <input type="text" class="form-control" formControlName="genero">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Nacionalidade</label>
+    <input type="text" class="form-control" formControlName="nacionalidade">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Estoque atual</label>
+    <input type="number" class="form-control" formControlName="estoque">
+  </div>
+
+  <button type="submit" class="btn btn-success" [disabled]="!formulario.valid" >Cadastrar</button>
+</form>

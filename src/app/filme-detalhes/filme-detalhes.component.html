@@ -1,0 +1,37 @@
+<h2>Detalhes do Filme</h2>
+
+<hr/>
+<div *ngIf="filme">
+  <div>
+    <label><b>Titulo: </b></label> {{filme.titulo}}
+  </div>
+  <div>
+    <label><b>Sinopse: </b></label> {{filme.sinopse}}
+  </div>
+  <div>
+    <label><b>Data de Lançamento: </b></label> {{filme.dataLancamento}}
+  </div>
+  <div>
+    <label><b>Genero: </b></label> {{filme.genero}}
+  </div>
+  <div>
+    <label><b>Nacionalidade: </b></label> {{filme.nacionalidade}}
+  </div>
+  <div>
+    <label><b>Estoque atual: </b></label> {{filme.estoque}}
+  </div>
+  <div>
+    <label><b>Criado em: </b></label> {{filme.criadoEm}}
+  </div>
+</div>
+
+<br>
+<br>
+<div class="row">
+  <div class="col-md-6">
+          <button (click)="ReturnToList()" class="btn btn-primary">Retornar para Filmes</button>
+          <button (click)="SendToAtualizar(filme.idFilme)" class="btn  btn-warning ml-3">Atualizar</button>
+          <button (click)="SendToExcluir(filme.idFilme)" class="btn btn-danger ml-3">Excluir</button>
+</div>
+</div>
+

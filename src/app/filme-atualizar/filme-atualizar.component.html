@@ -1,0 +1,36 @@
+<h2>Atualizar Filme</h2>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Titulo</label>
+        <input type="text" class="form-control" id="titulo" required [(ngModel)]="filme.titulo" name="titulo">
+      </div>
+
+      <div class="form-group">
+          <label for="name">Sinopse</label>
+          <input type="text" class="form-control" id="sinopse" required [(ngModel)]="filme.sinopse" name="sinopse">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Data de Lançamento</label>
+          <input type="date" class="form-control" id="datalancamento" required [(ngModel)]="filme.dataLancamento" name="datalancamento">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Genero</label>
+          <input type="text" class="form-control" id="genero" required [(ngModel)]="filme.genero" name="genero">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Nacionalidade</label>
+          <input type="text" class="form-control" id="nacionalidade" required [(ngModel)]="filme.nacionalidade" name="nacionalidade">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Estoque atual</label>
+          <input type="number" class="form-control" id="estoque" required [(ngModel)]="filme.estoque" name="estoque">
+        </div>
+
+    <button type="submit" class="btn btn-success">Atualizar</button>
+  </form>
+</div>
