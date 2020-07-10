@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Filme } from "../filme"; //IMPORTADO
 import { FilmeService } from "../filme.service" //IMPORTADO
@@ -23,10 +24,14 @@ export class FilmeDetalhesComponent implements OnInit {
     this.id = this.route.snapshot.params['id']; //pega o id que o Component LISTAR enviou via route
 
     this.filmeService.listarFilme(this.id)
-    .subscribe(data => {
+    .subscribe(
+      data => {
       console.log(data);
       this.filme = data;
-    }, error => console.log(error));
+    },
+      (err:HttpErrorResponse) => {
+      this.filmeService.openModal('ERRO',err.error.mensagem);}
+    );
   }
 
   ReturnToList(){

@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FilmeDetalhesComponent } from '../filme-detalhes/filme-detalhes.component'; // IMPORTADO
@@ -28,6 +29,15 @@ export class FilmeListarComponent implements OnInit {
 
   reloadData(){   // metodo para listar todos os filmes
     this.filmes = this.filmeService.listarTodosFilmes(); // busca da classe service
+    //.subscribe(
+      //data => {
+      //  console.log(data);
+      //  this.filmes = data;
+      //},
+      //(err:HttpErrorResponse) => {
+      //this.filmeService.openModal("ERRO", err.error.mensagem);
+    //}
+    //);
     console.log('metodo listar terminou');
     console.log(this.filmes);
   }
@@ -41,9 +51,11 @@ export class FilmeListarComponent implements OnInit {
       console.log(data);
       this.reloadData();
     },
-    error => console.log(error));
-    console.log('terminou o metodo DELETAR');
-  }
+    (err:HttpErrorResponse) => {
+    this.filmeService.openModal("ERRO", err.error.mensagem);
+  });
+}
+
 
   detalhesFilme(id: number){ // metodo para detalhar o
     this.router.navigate(['detalhes', id]);

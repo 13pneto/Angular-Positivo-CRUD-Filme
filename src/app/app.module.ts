@@ -12,6 +12,7 @@ import { FilmeAtualizarComponent } from './filme-atualizar/filme-atualizar.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserAnimationsModule,
     MatFormFieldModule,
     FormsModule,
+    ModalModule.forRoot() //Import para usar modal no bootstrap
   ],
   providers: [],
   bootstrap: [AppComponent]
